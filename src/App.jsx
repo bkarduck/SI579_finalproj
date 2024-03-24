@@ -1,29 +1,20 @@
 import './App.css';
+import CalendarComponent from './components/CalendarComponent'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx wow</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React 
-          </a>
-        </p>
-      </header>
+     <header>
+     {/* from: https://www.sliderrevolution.com/resources/css-header/ */}
+     <div class="overlay">
+     <h1>The best planner ever</h1>
+     <h3>showing the other font!</h3>
+      </div>
+     </header>
+    
+        <CalendarComponent />
     </div>
-  );
-}
 
-export default App;
+  )}
+
+  export default App;
