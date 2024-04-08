@@ -3,8 +3,46 @@
 }
 
 .header {
-  background-color: #74c0fc;
+  background-color: #DEDBD2;
   width: 100%;
   padding: 15px;
   margin-bottom: 50px;
+  color: #4A5759;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
+  margin: 50px;
+}
+
+.grid-container>div {
+  padding: 20px;
+  border-radius: 15px;
+  color: #4A5759;
+}
+
+.calendar-section {
+  background-color: #F7E1D7;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.todo-section {
+  background-color: bisque;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.habit-section {
+  background-color: #EDAFB8;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.quote-section {
+  background-color: #B0C4B1;
+  grid-column-start: 3;
+  grid-column-end: 4;
 }
