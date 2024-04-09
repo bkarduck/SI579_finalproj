@@ -1,0 +1,10 @@
+li{
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    margin: 10px;
+    font-size: 18px;
+}
+label{
+    margin-left: 8px;
+}

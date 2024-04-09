@@ -5,15 +5,16 @@ import QuoteBoard from './components/QuoteBoard';
 import TodoList from './components/TodoList';
 function App() {
   return (
-    <div className="App">
+    <div class="App">
+      
       <header class="header">
         <h1>Personal Planner</h1>
       </header>
-      <div className='grid-container'>
-        <div className='calendar-section'><CalendarComponent /></div>
-        <div className='todo-section'><TodoList /></div>
-        <div className='habit-section'><HabitTracker /></div>
-        <div className='quote-section'><QuoteBoard /></div>
+      <div class='grid-container'>
+        <div class='calendar-section'><CalendarComponent /></div>
+        <div class='todo-section'><TodoList /></div>
+        <div class='habit-section'><HabitTracker /></div>
+        <div class='quote-section'><QuoteBoard /></div>
       </div>
     </div>
 
