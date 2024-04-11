@@ -40,6 +40,9 @@ const HabitTracker = () => {
             <h3>Month: {thisMonth}</h3>
             <div class="habit-tracker-wrapper">
                 {/* Map habit list here and call Indivisual Habit Component */}
+                <IndividualHabit year={thisDate.getFullYear()} month={thisDate.getMonth()} habit_title='hello'/>
+                    
+          
             </div>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Add New Habit Tracker" aria-label="Add New Habit Tracker" aria-describedby="button-addon2" value={habitTitle} onChange={handleHabit}/>
