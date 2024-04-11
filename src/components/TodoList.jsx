@@ -21,7 +21,7 @@ const TodoList = () => {
     // is clearing entire list
     const handleRemove = (taskToRemove) => {
         setTodoItems((previousValues) => {
-            const updatedTodoItems = previousValues.filter(item => item.task !== taskToRemove);
+            const updatedTodoItems = previousValues.filter(item => item.description !== taskToRemove);
             localStorage.setItem('my-todo-items', JSON.stringify(updatedTodoItems));
             return updatedTodoItems;
         })
