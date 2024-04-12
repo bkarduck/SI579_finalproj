@@ -1,47 +1,60 @@
 import React from 'react';
 import Col from 'react-bootstrap/Col';
-import "../styles/individualHabit.css"
+import "../styles/IndividualHabit.css"
 import { useState } from 'react';
-// props passed in: thisDate, HabitTitle
 
+// Props passed in are current year, current month, a habit tracker's title
+const IndividualHabit = ({ year, month, habit_title }) => {
 
-const IndividualHabit = ({ year, month, habit_title}) => {
+  // Returns Box with color based on click action
+  const Box = ({ color, value, onClick }) => {
+    let fontColor;
 
-    const Box = ({ color, value, onClick }) => (
-        <div onClick={onClick} style={{
-          width: '30px',
-          height: '30px',
-          backgroundColor: color,
-          display: 'inline-block',
-          margin: '2px'
-        }} >{value}</div>
-      );
-    const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    // Handle case of a Leap Year
-    if (year % 4 === 0){
-        daysInMonth[1] = 29;
-    }else{
-        daysInMonth[1] = 28;
+    // Handles font color based on box color
+    if (color === "#EACBD2") {
+      fontColor = "grey";
+    } else {
+      fontColor = "white";
     }
-      
-   
-    const [colors, setColors] = useState(Array(daysInMonth[month]).fill('grey'));
-    
-    const changeColor = (index) => {
-        const newColors = [...colors];
-        newColors[index] = newColors[index] === 'grey' ? 'blue' : 'grey';
-        setColors(newColors);
-    };
-    
+
     return (
-          <div>
-            {habit_title}
-            {colors.map((color, index) => (
-              <Box key={index} color={color} value={index + 1} onClick={() => changeColor(index)} />
-            ))}
-          </div>
-        );
-      };
-      
+      <div onClick={onClick} className="box" style={{
+        backgroundColor: color,
+        color: fontColor
+      }}>{value}</div>
+    );
+  };
+
+  const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  // Handle case of a Leap Year
+  if (year % 4 === 0) {
+    daysInMonth[1] = 29;
+  } else {
+    daysInMonth[1] = 28;
+  }
+
+  // Handle change of color
+  const [colors, setColors] = useState(Array(daysInMonth[month]).fill('#EACBD2'));
+
+  const changeColor = (index) => {
+    const newColors = [...colors];
+    newColors[index] = newColors[index] === '#EACBD2' ? '#A93F55' : '#EACBD2';
+    setColors(newColors);
+  };
+
+  return (
+    <>
+      <div class="habit-title-container">
+        <h3>{habit_title}</h3>
+      </div>
+      <div class="habit-tracker-container">
+        {colors.map((color, index) => (
+          <Box key={index} color={color} value={index + 1} onClick={() => changeColor(index)} />
+        ))}
+      </div>
+    </>
+  );
+};
+
 
 export default IndividualHabit;

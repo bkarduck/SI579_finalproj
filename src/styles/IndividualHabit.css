@@ -1,0 +1,22 @@
+.habit-title-container {
+    margin: 2px;
+    display: flex;
+    justify-content: left;
+    padding-left: 10px;
+}
+
+.habit-title-container > h3{
+    font-size: 20px;
+}
+
+.box {
+    border: 1px solid #b8787f;
+    width: 30px;
+    height: 30px;
+    background-color: #EACBD2;
+    display: inline-block;
+    margin: 2px;
+}
+.habit-tracker-container{
+    margin: 5px 0px 10px 5px;
+}

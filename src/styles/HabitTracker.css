@@ -1,0 +1,11 @@
+.heading-container{
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+}
+.month{
+    font-size: 25px;
+}
+.habit-tracker-wrapper{
+    margin: 15px 0px 15px 0px;
+    width: 100%;
+}
