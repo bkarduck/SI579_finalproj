@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import "../styles/QuoteBoard.css"
 
 const QuoteBoard = () => {
     const [data, setData] = useState(null);
@@ -17,17 +18,15 @@ const QuoteBoard = () => {
     console.log(data);
 
     return (
-        <>
-            <div>
-                <h2>Quote Board</h2>
-                {data && (
-                    <div>
-                        <p>"{data.quote}"</p>
-                        <p>- {data.author}</p>
-                    </div>
-                )}
-            </div>
-        </>
+        <div class="wrapper">
+            <h2>Quote Board</h2>
+            {data && (
+                <div class="quote-container">
+                    <p class="quote">"{data.quote}"</p>
+                    <p class="author">- {data.author}</p>
+                </div>
+            )}
+        </div>
     )
 }
 export default QuoteBoard;

@@ -2,6 +2,9 @@
     border-bottom: 1px solid white;
     margin-bottom: 20px;
 }
+.heading-container > h2{
+    font-weight: 800;
+}
 .month{
     font-size: 25px;
 }

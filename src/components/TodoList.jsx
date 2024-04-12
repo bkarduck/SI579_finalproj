@@ -44,7 +44,7 @@ const TodoList = () => {
 
 
     return (
-        <>
+        <div class="wrapper">
             <h2>Todo List</h2>
             <div>
                 <div class="input-group mb-3">
@@ -60,7 +60,7 @@ const TodoList = () => {
                     </ul>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 export default TodoList;

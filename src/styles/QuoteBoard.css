@@ -1,0 +1,16 @@
+.wrapper > h2{
+    font-weight: 800;
+}
+.quote-container{
+    font-size: 22px;
+    margin: 10px;
+    color: rgb(43, 61, 54);
+}
+.quote{
+    font-weight: 500;
+    font-style: italic;
+}
+
+.author{
+    font-weight: 400;
+}
