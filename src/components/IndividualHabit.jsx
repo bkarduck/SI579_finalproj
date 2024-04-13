@@ -34,17 +34,22 @@ const IndividualHabit = ({ year, month, habit_title, remove_func }) => {
   }
 
   // Handle change of color
-  const [colors, setColors] = useState(Array(daysInMonth[month]).fill('#EACBD2'));
+  const [colors, setColors] = useState(() => {
+      const storedItems = localStorage.getItem(habit_title);
+      if (storedItems) {
+          return JSON.parse(storedItems)
+      }
+      return Array(daysInMonth[month]).fill('#EACBD2');
+  });
 
   const changeColor = (index) => {
     const newColors = [...colors];
     newColors[index] = newColors[index] === '#EACBD2' ? '#A93F55' : '#EACBD2';
     setColors(newColors);
+    localStorage.setItem(habit_title, JSON.stringify(newColors));
+
   };
-  // TODO: set the color list per month (maybe as an object?) to local storage
-  console.log(colors)
-  // based on console log - appears to be a list of the colors, so could change the way 
-  // we read in the color list and set it to 0 or 1, or just directly store color list!
+  
 
   return (
     <>

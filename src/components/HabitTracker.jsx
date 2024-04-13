@@ -47,6 +47,7 @@ const HabitTracker = () => {
         setHabitList((previousValues) => {
             const updatedHabitList = previousValues.filter(item => item.habit_title !== habitToRemove);
             localStorage.setItem('my-habits-list', JSON.stringify(updatedHabitList));
+            localStorage.removeItem(habitToRemove)
             return updatedHabitList;
         })
     }
