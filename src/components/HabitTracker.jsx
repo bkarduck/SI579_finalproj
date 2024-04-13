@@ -30,7 +30,7 @@ const HabitTracker = () => {
     // Add new Habit to List of Habits
     const addItem = () => {
         if (habitTitle) {
-            setTodoItems((previousItems) => {
+            setHabitList((previousItems) => {
                 const newItem = {
                     habit_title: habitTitle,
                 }
@@ -43,6 +43,13 @@ const HabitTracker = () => {
     }
 
     // @todo Add Remove Habit Function
+    const handleRemove = (habitToRemove) => {
+        setHabitList((previousValues) => {
+            const updatedHabitList = previousValues.filter(item => item.habit_title !== habitToRemove);
+            localStorage.setItem('my-habits-list', JSON.stringify(updatedHabitList));
+            return updatedHabitList;
+        })
+    }
 
     return (
         <>
@@ -53,6 +60,8 @@ const HabitTracker = () => {
 
             <div class="habit-tracker-wrapper">
                 {/* Display List of Habits with a Map */}
+                {habitList.map((item, i) => <IndividualHabit key={i} year={thisDate.getFullYear()} month={thisDate.getMonth()} habit_title={item.habit_title} remove_func={handleRemove}/>)
+                    }
                 <IndividualHabit year={thisDate.getFullYear()} month={thisDate.getMonth()} habit_title='Dummy Habit' />
 
 

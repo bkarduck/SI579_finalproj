@@ -3,6 +3,7 @@
     display: flex;
     justify-content: left;
     padding-left: 10px;
+    justify-content: space-between;
 }
 
 .habit-title-container > h3{
@@ -16,6 +17,19 @@
     background-color: #EACBD2;
     display: inline-block;
     margin: 2px;
+}
+
+.button_remove {
+    margin-left:10px;
+    width: 25px;
+    height: 25px;
+
+    /* display: inline-block; */
+    border: 0px solid #b8787f;
+    background-color: #EACBD2;
+    justify-content: center;
+    vertical-align: super;
+    display: flex;
 }
 .habit-tracker-container{
     margin: 5px 0px 10px 5px;
