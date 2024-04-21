@@ -1,40 +1,34 @@
 import React, { useState } from 'react';
 import { Dialog, DialogTitle, DialogContent, TextField, DialogActions, Button } from '@mui/material';
-
 const DialogComponent = ({ open, onClose, selectedDate, setEvents, selectedEvent }) => {
 
   const [title, setTitle] = useState('');
-
-
-
-
-const handleSaveEvent = () => {
+  const handleSaveEvent = () => {
 
     if (selectedEvent) {
-        setEvents((prevEvents) =>
-                prevEvents.map((event) => (event.id === selectedEvent.id ? { ...event, title } : event))
-              );
+      setEvents((prevEvents) =>
+        prevEvents.map((event) => (event.id === selectedEvent.id ? { ...event, title } : event))
+      );
 
-            } else {
-    setEvents(prevEvents => {
+    } else {
+      setEvents(prevEvents => {
         const updatedEvents = [...prevEvents, {
-            title,
-            start: selectedDate.start,
-            end: selectedDate.end,
-            id: new Date().getTime()
-          }];
-  
-      localStorage.setItem('my-events', JSON.stringify(updatedEvents)); // Update local storage here
-      return updatedEvents;
-    });}
+          title,
+          start: selectedDate.start,
+          end: selectedDate.end,
+          id: new Date().getTime()
+        }];
+
+        localStorage.setItem('my-events', JSON.stringify(updatedEvents)); // Update local storage here
+        return updatedEvents;
+      });
+    }
     setTitle('');
     onClose();
   };
 
-
-  
   const handleDeleteEvent = () => {
-  
+
     setEvents(prevEvents => {
       const filteredEvents = prevEvents.filter(event => event.id !== selectedEvent.id);
       localStorage.setItem('my-events', JSON.stringify(filteredEvents)); // Update local storage here
@@ -42,11 +36,6 @@ const handleSaveEvent = () => {
     });
     onClose();
   };
-
-
-  
-
-  
 
   return (
     <Dialog open={open} onClose={onClose}>
@@ -67,7 +56,7 @@ const handleSaveEvent = () => {
       </DialogContent>
       <DialogActions>
 
-        <Button onClick={onClose}>Cancel</Button>
+        <Button onClick={onClose} >Cancel</Button>
         <Button onClick={() => handleSaveEvent()}>Save</Button>
         {selectedEvent && <Button onClick={() => handleDeleteEvent()} color="secondary">Delete</Button>}
       </DialogActions>
