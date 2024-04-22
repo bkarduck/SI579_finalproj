@@ -8,9 +8,11 @@ const DialogComponent = ({ open, onClose, selectedDate, setEvents, selectedEvent
   const handleSaveEvent = () => {
 
     if (selectedEvent) {
-      setEvents((prevEvents) =>
+      if (title.length > 0 ){
+        setEvents((prevEvents) =>
         prevEvents.map((event) => (event.id === selectedEvent.id ? { ...event, title } : event))
       );
+      }
 
     } else {
       setEvents(prevEvents => {
