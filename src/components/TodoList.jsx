@@ -27,7 +27,7 @@ const TodoList = () => {
         })
     }
 
-    //Add todo item to list and update local storage list
+    // Add todo item to list and update local storage list
     const addItem = () => {
         if (task) {
             setTodoItems((previousItems) => {
