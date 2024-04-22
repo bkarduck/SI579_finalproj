@@ -55,6 +55,9 @@ const CalendarComponent = () => {
 
   return (
     <div>
+      <div className="wrapper">
+            <h2>Calendar</h2>
+      </div>
       <div style={{ height: 400 }}>
         <Calendar
           localizer={localizer}
