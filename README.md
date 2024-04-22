@@ -19,6 +19,11 @@ If you are attempting to build this for yourself, ensure you have the following 
 - MUI
 - react-big-calendar
 - react-bootstrap
+## How to Run this App
+The usual npm commands in the project root:
+
+npm install (which should only need to be done once, after that everything is installed )
+npm start will start the server so you can access the site via browser`
 
 ### Usage
 
