@@ -1,12 +1,8 @@
 import React from "react";
-import { useEffect } from "react";
 import "../styles/ListItem.css"
 
 const ListItem = (props) => {
 
-    const handleCheck = () => {
-        props.remove(props.description);
-    }
 
     return (
         <div>

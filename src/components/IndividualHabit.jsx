@@ -1,5 +1,4 @@
 import React from 'react';
-import Col from 'react-bootstrap/Col';
 import "../styles/IndividualHabit.css"
 import { useState } from 'react';
 

@@ -3,6 +3,7 @@ import IndividualHabit from './IndividualHabit';
 import { IoMdAdd } from "react-icons/io";
 import { useState } from 'react';
 import "../styles/HabitTracker.css"
+
 const HabitTracker = () => {
 
     // Get the current Month
