@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 // Props passed in are current year, current month, a habit tracker's title, and the remove function
 const IndividualHabit = ({ year, month, habit_title, remove_func }) => {
-  
+
   // Returns Box with color based on click action
   const Box = ({ color, value, onClick }) => {
     let fontColor;
@@ -35,13 +35,14 @@ const IndividualHabit = ({ year, month, habit_title, remove_func }) => {
 
   // Handle change of color
   const [colors, setColors] = useState(() => {
-      const storedItems = localStorage.getItem(habit_title);
-      if (storedItems) {
-          return JSON.parse(storedItems)
-      }
-      return Array(daysInMonth[month]).fill('#EACBD2');
+    const storedItems = localStorage.getItem(habit_title);
+    if (storedItems) {
+      return JSON.parse(storedItems)
+    }
+    return Array(daysInMonth[month]).fill('#EACBD2');
   });
 
+  // Handle color change for marked/unmarked days
   const changeColor = (index) => {
     const newColors = [...colors];
     newColors[index] = newColors[index] === '#EACBD2' ? '#A93F55' : '#EACBD2';
@@ -49,15 +50,15 @@ const IndividualHabit = ({ year, month, habit_title, remove_func }) => {
     localStorage.setItem(habit_title, JSON.stringify(newColors));
 
   };
-  
+
 
   return (
     <>
       <div class="habit-title-container">
         <h3>{habit_title}  </h3>
         <button className='button_remove' type="button" onClick={() => remove_func(habit_title)}>
-              ❌
-                </button>
+          ❌
+        </button>
       </div>
       <div class="habit-tracker-container">
         {colors.map((color, index) => (

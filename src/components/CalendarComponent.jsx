@@ -12,6 +12,7 @@ const localizer = momentLocalizer(moment);
 
 const CalendarComponent = () => {
 
+  // Define events, use local storage if existing.
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [events, setEvents] = useState(() => {
     const storedEvents = localStorage.getItem('my-events');
@@ -23,6 +24,7 @@ const CalendarComponent = () => {
 
   const [open, setOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState();
+
 
   const handleSelectSlot = (event) => {
     const start = event.start

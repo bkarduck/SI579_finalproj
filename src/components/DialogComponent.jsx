@@ -3,6 +3,8 @@ import { Dialog, DialogTitle, DialogContent, TextField, DialogActions, Button } 
 const DialogComponent = ({ open, onClose, selectedDate, setEvents, selectedEvent }) => {
 
   const [title, setTitle] = useState('');
+
+  // Save edits to event
   const handleSaveEvent = () => {
 
     if (selectedEvent) {
@@ -27,6 +29,7 @@ const DialogComponent = ({ open, onClose, selectedDate, setEvents, selectedEvent
     onClose();
   };
 
+  // Delete Events
   const handleDeleteEvent = () => {
 
     setEvents(prevEvents => {

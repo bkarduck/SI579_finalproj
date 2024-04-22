@@ -9,7 +9,7 @@ const HabitTracker = () => {
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const thisDate = new Date();
     const thisMonth = monthNames[thisDate.getMonth()];
-   
+
     const [habitTitle, setHabitTitle] = useState('');
 
     // List of Habit Trackers stored in Local Storage
@@ -61,8 +61,8 @@ const HabitTracker = () => {
 
             <div class="habit-tracker-wrapper">
                 {/* Display List of Habits with a Map */}
-                {habitList.map((item, i) => <IndividualHabit key={i} year={thisDate.getFullYear()} month={thisDate.getMonth()} habit_title={item.habit_title} remove_func={handleRemove}/>)
-                    }
+                {habitList.map((item, i) => <IndividualHabit key={i} year={thisDate.getFullYear()} month={thisDate.getMonth()} habit_title={item.habit_title} remove_func={handleRemove} />)
+                }
                 <IndividualHabit year={thisDate.getFullYear()} month={thisDate.getMonth()} habit_title='Dummy Habit' />
 
 

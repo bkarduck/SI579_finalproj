@@ -5,6 +5,7 @@ import "../styles/QuoteBoard.css"
 const QuoteBoard = () => {
     const [data, setData] = useState(null);
 
+    // Make API call
     useEffect(() => {
         fetch('https://api.api-ninjas.com/v1/quotes?category=inspirational', {
             headers: {

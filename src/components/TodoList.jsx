@@ -17,8 +17,8 @@ const TodoList = () => {
         setTask(e.target.value);
     };
 
-    // NEEDS WORK
-    // is clearing entire list
+
+    // Delete Todo Item
     const handleRemove = (taskToRemove) => {
         setTodoItems((previousValues) => {
             const updatedTodoItems = previousValues.filter(item => item.description !== taskToRemove);
@@ -55,7 +55,7 @@ const TodoList = () => {
                 <div class='list-wrapper'>
                     <ul class='todo-list'>
                         {/* map of list items goes here */
-                            todoItems.map((item, i) => <ListItem key={i} description={item.description} remove={handleRemove}/>)
+                            todoItems.map((item, i) => <ListItem key={i} description={item.description} remove={handleRemove} />)
                         }
                     </ul>
                 </div>
