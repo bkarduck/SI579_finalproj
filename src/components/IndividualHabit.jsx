@@ -54,13 +54,13 @@ const IndividualHabit = ({ year, month, habit_title, remove_func }) => {
 
   return (
     <>
-      <div class="habit-title-container">
+      <div className="habit-title-container">
         <h3>{habit_title}  </h3>
         <button className='button_remove' type="button" onClick={() => remove_func(habit_title)}>
           ❌
         </button>
       </div>
-      <div class="habit-tracker-container">
+      <div className="habit-tracker-container">
         {colors.map((color, index) => (
           <Box key={index} color={color} value={index + 1} onClick={() => changeColor(index)} />
         ))}

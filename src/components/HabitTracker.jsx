@@ -42,7 +42,8 @@ const HabitTracker = () => {
         }
     }
 
-    // @todo Add Remove Habit Function
+
+    // Removes the selected habit from local storage
     const handleRemove = (habitToRemove) => {
         setHabitList((previousValues) => {
             const updatedHabitList = previousValues.filter(item => item.habit_title !== habitToRemove);
@@ -54,22 +55,21 @@ const HabitTracker = () => {
 
     return (
         <>
-            <div class="heading-container">
+            <div className="heading-container">
                 <h2>Habit Tracker</h2>
-                <h3 class="month">Month: {thisMonth}</h3>
+                <h3 className="month">Month: {thisMonth}</h3>
             </div>
 
-            <div class="habit-tracker-wrapper">
+            <div className="habit-tracker-wrapper">
                 {/* Display List of Habits with a Map */}
                 {habitList.map((item, i) => <IndividualHabit key={i} year={thisDate.getFullYear()} month={thisDate.getMonth()} habit_title={item.habit_title} remove_func={handleRemove} />)
                 }
-                <IndividualHabit year={thisDate.getFullYear()} month={thisDate.getMonth()} habit_title='Dummy Habit' />
 
 
             </div>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Add New Habit Tracker" aria-label="Add New Habit Tracker" aria-describedby="button-addon2" value={habitTitle} onChange={handleHabit} />
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2" onClick={addItem}>
+            <div className="input-group mb-3">
+                <input type="text" className="form-control" placeholder="Add New Habit Tracker" aria-label="Add New Habit Tracker" aria-describedby="button-addon2" value={habitTitle} onChange={handleHabit} />
+                <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={addItem}>
                     <IoMdAdd />
                 </button>
             </div>

@@ -44,16 +44,16 @@ const TodoList = () => {
 
 
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <h2>Todo List</h2>
             <div>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Add new task" aria-label="Add new task" aria-describedby="button-addon2" value={task} onChange={handleTask} />
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" onClick={addItem}><IoMdAdd />
+                <div className="input-group mb-3">
+                    <input type="text" className="form-control" placeholder="Add new task" aria-label="Add new task" aria-describedby="button-addon2" value={task} onChange={handleTask} />
+                    <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={addItem}><IoMdAdd />
                     </button>
                 </div>
-                <div class='list-wrapper'>
-                    <ul class='todo-list'>
+                <div className='list-wrapper'>
+                    <ul className='todo-list'>
                         {/* map of list items goes here */
                             todoItems.map((item, i) => <ListItem key={i} description={item.description} remove={handleRemove} />)
                         }

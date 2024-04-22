@@ -25,9 +25,12 @@ const CalendarComponent = () => {
   const [open, setOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState();
 
-    const handleSelectSlot = ( event) => {
+  const handleSelectSlot = ( event) => {
       const start = event.start
       const end = event.end
+      // there was a bug in the way that react-big-calendar works
+      // where we had to set the end time for an event if an end wasn't
+      // selected for a certain slot
     if (!end) {
       setSelectedDate({ start, start });
     }
@@ -35,7 +38,6 @@ const CalendarComponent = () => {
       setSelectedDate({ start, end });
     }
 
-  const date = new Date();
     setOpen(true);
   };
 

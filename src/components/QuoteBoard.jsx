@@ -16,15 +16,15 @@ const QuoteBoard = () => {
             .then(json => setData(json[0])) // Assuming the API always returns a single quote
             .catch(error => console.error(error));
     }, []);
-    console.log(data);
+
 
     return (
-        <div class="wrapper">
+        <div className="wrapper">
             <h2>Quote Board</h2>
             {data && (
-                <div class="quote-container">
-                    <p class="quote">"{data.quote}"</p>
-                    <p class="author">- {data.author}</p>
+                <div className="quote-container">
+                    <p className="quote">"{data.quote}"</p>
+                    <p className="author">- {data.author}</p>
                 </div>
             )}
         </div>
