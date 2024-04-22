@@ -25,10 +25,9 @@ const CalendarComponent = () => {
   const [open, setOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState();
 
-
-  const handleSelectSlot = (event) => {
-    const start = event.start
-    const end = event.end
+    const handleSelectSlot = ( event) => {
+      const start = event.start
+      const end = event.end
     if (!end) {
       setSelectedDate({ start, start });
     }
@@ -36,7 +35,7 @@ const CalendarComponent = () => {
       setSelectedDate({ start, end });
     }
 
-    const date = new Date();
+  const date = new Date();
     setOpen(true);
   };
 
