@@ -6,7 +6,7 @@ This React and JavaScript Personal Planner application is a simple, yet powerful
 
 ## Features
 
-- **Calendar**: Add and remove events with ease. The calendar view provides a monthly overview, allowing you to quickly scan your upcoming commitments.
+- **Calendar**: Add and remove events with ease. The calendar view provides monthly, weekly, and daily overviews, allowing you to quickly scan your upcoming commitments in the format of your choosing.
 - **Todo List**: Keep track of your tasks with a straightforward todo list. Add, complete, and delete tasks as needed to manage your daily responsibilities.
 - **Habit Tracker**: Monitor and cultivate new habits. The habit tracker helps you stay committed by providing a visual representation of your progress.
 - **Quote Board**: Get inspired with various quotes that will change upon refreshing the page!
